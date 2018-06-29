@@ -101,7 +101,7 @@ function askCustomer() {
                 }else{
                     console.log("You are about to purchase " + quantity + " " + itemName + "(e)s. This will cost $" + cost + ".");                    
                 }
-                
+                console.log("\nPlacing order...\n");
                 connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
@@ -116,6 +116,7 @@ function askCustomer() {
 
                     // console.log(result);
                     console.log("Thank you for your purchase!");
+                    
                     connection.end();
                 });
 
